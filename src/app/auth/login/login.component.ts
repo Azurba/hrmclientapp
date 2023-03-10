@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Login } from 'src/app/interfaces/login'
 
 @Component({
   selector: 'app-login',
@@ -7,8 +9,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  loginObj:Login={
+    emailId:"",
+    password:""
+  }
+  
   constructor(private router:Router){}
-  loginUser(){
-    this.router.navigateByUrl("dashboard/index")
+  loginUser(loginUser:NgForm){
+    console.log(loginUser);
+  }
+
+  resetForm(loginForm:NgForm){
+    loginForm.resetForm();
   }
 }
