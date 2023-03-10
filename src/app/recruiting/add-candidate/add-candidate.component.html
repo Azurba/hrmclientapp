@@ -1,0 +1,6 @@
+<form [formGroup]="addCandidateFormGroup">
+    <input type="text" formControlName="firstName">
+    <input type="text" formControlName="lastName">
+    <button type="button" (click)="addCandidate()">Save</button>
+    <button type="button" (click)="loadData()">Load</button>
+</form>
